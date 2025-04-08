@@ -23,6 +23,8 @@
 	<!-- template-style-->
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/responsive.css" rel="stylesheet">
+	<!-- Animate.css for animations -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 	<style>
 		html {
 			scroll-behavior: smooth;
@@ -68,6 +70,60 @@
 				opacity: 1;
 				transform: translateY(0);
 			}
+		}
+
+		/* Learning Path Styles */
+		.learning-path {
+			position: relative;
+			padding: 40px 0;
+		}
+
+		.level-item {
+			display: flex;
+			align-items: center;
+			margin-bottom: 30px;
+			position: relative;
+			opacity: 0;
+			animation: fadeInLeft 0.5s ease forwards;
+		}
+
+		.level-item:nth-child(1) { animation-delay: 0.2s; }
+		.level-item:nth-child(2) { animation-delay: 0.4s; }
+		.level-item:nth-child(3) { animation-delay: 0.6s; }
+		.level-item:nth-child(4) { animation-delay: 0.8s; }
+		.level-item:nth-child(5) { animation-delay: 1s; }
+
+		.level-number {
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 24px;
+			color: white;
+			font-weight: bold;
+			box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+			z-index: 2;
+		}
+
+		.level-content {
+			flex: 1;
+			margin-left: 20px;
+			background: white;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+		}
+
+		.level-content h4 {
+			margin-bottom: 10px;
+			font-weight: 600;
+		}
+
+		.level-content p {
+			margin-bottom: 0;
+			color: #666;
 		}
 	</style>
 </head>
@@ -460,8 +516,8 @@
 	</section>
 	<!--End pricing-->
 
-	<!--Start Roadmap-->
-	<section class="block-a1 pad-tb">
+	<!-- Learning Path Section -->
+	<section class="block-a1 pad-tb learning-path">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-lg-8">
@@ -470,62 +526,61 @@
 						<h2>AI & Robotics</h2>
 						<p>Your journey from beginner to advanced in AI and Robotics</p>
 					</div>
-					</div>
 				</div>
-
+			</div>
+	
 			<div class="row mt50">
 				<div class="col-lg-12">
 					<div style="max-width: 1000px; margin: 0 auto;">
 						<!-- Level 1 -->
-						<div style="display: flex; align-items: center; margin-bottom: 30px;">
-							<div style="background: #4CC9F0; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: white; font-weight: bold;">01</div>
-							<div style="flex: 1; margin-left: 20px;">
-								<h4 style="color: #4CC9F0; margin-bottom: 10px;">Foundations of Electronics</h4>
-								<p>Master basic electronics concepts, circuit building, and component understanding. Perfect starting point for beginners.</p>
-					</div>
-				</div>
-						
-						<!-- Level 2 -->
-						<div style="display: flex; align-items: center; margin-bottom: 30px; margin-left: 40px;">
-							<div style="background: #4895EF; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: white; font-weight: bold;">02</div>
-							<div style="flex: 1; margin-left: 20px;">
-								<h4 style="color: #4895EF; margin-bottom: 10px;">Introduction to Programming</h4>
-								<p>Learn Arduino programming basics, coding fundamentals, and simple automation projects.</p>
-					</div>
-				</div>
-						
-						<!-- Level 3 -->
-						<div style="display: flex; align-items: center; margin-bottom: 30px; margin-left: 80px;">
-							<div style="background: #4361EE; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: white; font-weight: bold;">03</div>
-							<div style="flex: 1; margin-left: 20px;">
-								<h4 style="color: #4361EE; margin-bottom: 10px;">Sensors & Actuators</h4>
-								<p>Explore various sensors, motors, and actuators. Build interactive projects with real-world applications.</p>
-					</div>
-				</div>
-
-						<!-- Level 4 -->
-						<div style="display: flex; align-items: center; margin-bottom: 30px; margin-left: 120px;">
-							<div style="background: #3F37C9; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: white; font-weight: bold;">04</div>
-							<div style="flex: 1; margin-left: 20px;">
-								<h4 style="color: #3F37C9; margin-bottom: 10px;">Robotics Integration</h4>
-								<p>Combine electronics and programming to build autonomous robots. Learn about robot navigation and control systems.</p>
-					</div>
-				</div>
-						
-						<!-- Level 5 -->
-						<div style="display: flex; align-items: center; margin-left: 160px;">
-							<div style="background: #3A0CA3; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: white; font-weight: bold;">05</div>
-							<div style="flex: 1; margin-left: 20px;">
-								<h4 style="color: #3A0CA3; margin-bottom: 10px;">AI Implementation</h4>
-								<p>Implement artificial intelligence in your robotics projects. Create smart systems with machine learning capabilities.</p>
-								</div>
+						<div class="level-item">
+							<div class="level-number" style="background: #fbcb50;">01</div>
+							<div class="level-content">
+								<h4 style="color: #fbcb50;">Level 1: Beginner Basics</h4>
+								<p>Start your journey with fundamental electronics concepts, basic circuit design, and hands-on projects that lay the groundwork for your robotics adventure. Perfect for complete beginners!</p>
 							</div>
+						</div>
+	
+						<!-- Level 2 -->
+						<div class="level-item" style="margin-left: 40px;">
+							<div class="level-number" style="background: #f3a761;">02</div>
+							<div class="level-content">
+								<h4 style="color: #f3a761;">Level 2: Robotics Foundations</h4>
+								<p>Dive into the world of robotics with Arduino programming, motor control, and basic automation. Build your first robot and understand the core principles of robotic systems.</p>
+							</div>
+						</div>
+	
+						<!-- Level 3 -->
+						<div class="level-item" style="margin-left: 80px;">
+							<div class="level-number" style="background: #ea8472;">03</div>
+							<div class="level-content">
+								<h4 style="color: #ea8472;">Level 3: Smart Systems</h4>
+								<p>Master advanced sensors, actuators, and control systems. Create intelligent robots that can interact with their environment and make autonomous decisions.</p>
+							</div>
+						</div>
+	
+						<!-- Level 4 -->
+						<div class="level-item" style="margin-left: 120px;">
+							<div class="level-number" style="background: #d87297;">04</div>
+							<div class="level-content">
+								<h4 style="color: #d87297;">Level 4: Mobile App-Connected Devices</h4>
+								<p>Learn to build IoT-enabled robots that can be controlled via mobile apps. Explore wireless communication, cloud connectivity, and remote monitoring systems.</p>
+							</div>
+						</div>
+	
+						<!-- Level 5 -->
+						<div class="level-item" style="margin-left: 160px;">
+							<div class="level-number" style="background: #e36658;">05</div>
+							<div class="level-content">
+								<h4 style="color: #e36658;">Level 5: AI-Powered Robotics</h4>
+								<p>Combine robotics with artificial intelligence to create smart, learning robots. Implement computer vision, machine learning, and autonomous decision-making in your projects.</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!--End Roadmap-->
 
 	<!--Start About-->
 	<section style="padding-top: 5rem" class="service pad-tb bg-gradient5">
@@ -1161,7 +1216,9 @@ End Clients-->
 	<!-- Add Supabase -->
 	<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 	<!--common script file-->
+	<script src="js/jquery.min.js"></script>
 	<script src="js/main.js"></script>
+
 	<script>
 		// Initialize Supabase client
 		const supabaseUrl = 'https://vlezggeimooljrgimapg.supabase.co'

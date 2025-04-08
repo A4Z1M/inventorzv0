@@ -433,3 +433,26 @@
 		});
 	});
 })(jQuery);
+// Learning Path Animation
+document.addEventListener('DOMContentLoaded', function() {
+	// Initialize animation on scroll
+	function animateElements() {
+	  const elements = document.querySelectorAll(".level-item");
+	  elements.forEach((element, index) => {
+		const rect = element.getBoundingClientRect();
+		const isVisible = rect.top < window.innerHeight - 100;
+		
+		if (isVisible && !element.classList.contains('animate__animated')) {
+		  setTimeout(() => {
+			element.classList.add("animate__animated", "animate__fadeInLeft");
+		  }, index * 200); // Stagger the animations
+		}
+	  });
+	}
+	
+	// Run on initial load
+	animateElements();
+	
+	// Add scroll listener
+	window.addEventListener("scroll", animateElements);
+  });
